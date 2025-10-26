@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tambah Pengguna Siswa</title>
+
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="../../css/admin/home-admin.css" />
+  <link rel="stylesheet" href="../../css/admin/tambah-pengguna.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-left">
+      <div class="logo"><img src="../../assets/logo-sekolah.png" alt="Logo" /></div>
+      <h1>SMAN 1 Parigi</h1>
+    </div>
+    <div class="header-right">
+      <div class="user-info">
+        <div class="user-text">
+          <span class="user-name">Braum Chad</span>
+          <span class="user-role">admin</span>
+        </div>
+        <div class="user-avatar">
+          <img src="../../assets/profile-admin.png" alt="Admin" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="sidebar">
+      <div class="menu-title">Menu</div>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          </svg>
+          <span>Beranda</span>
+        </li>
+        <li class="menu-item active">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Pengguna</span>
+        </li>
+        <li class="menu-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span>Aktivitas</span>
+        </li>
+      </ul>
+
+      <button class="logout-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+        <span>Logout</span>
+      </button>
+    </nav>
+
+    <div class="content">
+      <div class="form-wrapper">
+        <h2 class="page-title">Daftar Pengguna › <span>Tambah Pengguna Siswa</span></h2>
+
+        <form class="form-tambah-pengguna">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nama">Nama</label>
+              <input id="nama" type="text" placeholder="masukan nama" required />
+            </div>
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input id="username" type="text" placeholder="Username" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input id="password" type="password" placeholder="masukan password" required />
+            </div>
+            <div class="form-group">
+              <label for="role">Role</label>
+              <select id="role" required>
+                <option value="">Pilih Role</option>
+                <option value="guru">Guru</option>
+                <option value="siswa" selected>Siswa</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="jurusan">Jurusan</label>
+              <select id="jurusan" required>
+                <option value="">Pilih Jurusan</option>
+                <option value="ipa">IPA</option>
+                <option value="ips">IPS</option>
+                <option value="bahasa">Bahasa</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="tingkat">Tingkat</label>
+              <select id="tingkat" required>
+                <option value="">Pilih Tingkat</option>
+                <option value="X">X</option>
+                <option value="XI">XI</option>
+                <option value="XII">XII</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group" style="flex: 1;">
+              <label for="kelas">Kelas</label>
+              <input id="kelas" type="text" placeholder="contoh: IPA 01" required />
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn-cancel" onclick="window.history.back()">Batalkan</button>
+            <button type="submit" class="btn-confirm">Konfirmasi</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const roleSelect = document.getElementById("role");
+
+      roleSelect.addEventListener("change", function () {
+        const selectedRole = this.value;
+
+        if (selectedRole === "guru") {
+          window.location.href = "tambah-pengguna-guru.html";
+        } else if (selectedRole === "admin") {
+          window.location.href = "tambah-pengguna.html";
+        } else if (selectedRole === "siswa") {
+          return;
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
