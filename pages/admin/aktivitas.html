@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aktivitas | SMAN 1 Parigi</title>
+
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="../../css/admin/home-admin.css" />
+  <link rel="stylesheet" href="../../css/admin/aktivitas.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <div class="logo">
+        <img src="../../assets/logo-sekolah.png" alt="Logo" />
+      </div>
+      <h1>SMAN 1 Parigi</h1>
+    </div>
+
+    <div class="header-right">
+      <div class="user-info">
+        <div class="user-text">
+          <span class="user-name">Braum Chad</span>
+          <span class="user-role">admin</span>
+        </div>
+        <div class="user-avatar">
+          <img src="../../assets/profile-admin.png" alt="Admin" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- SIDEBAR -->
+    <nav class="sidebar">
+      <div class="menu-title">Menu</div>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          </svg>
+          <span>Beranda</span>
+        </li>
+        <li class="menu-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Pengguna</span>
+        </li>
+        <li class="menu-item active">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span>Aktivitas</span>
+        </li>
+      </ul>
+
+      <button class="logout-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+        <span>Logout</span>
+      </button>
+    </nav>
+
+    <!-- KONTEN -->
+    <div class="content">
+      <div class="activity-wrapper">
+        <h2 class="page-title">Aktivitas</h2>
+
+        <!-- FILTER -->
+        <div class="filter-container">
+          <select>
+            <option>Semua Tingkat</option>
+            <option>X</option>
+            <option>XI</option>
+            <option>XII</option>
+          </select>
+
+          <select>
+            <option>Semua Jurusan</option>
+            <option>IPA</option>
+            <option>IPS</option>
+            <option>Bahasa</option>
+          </select>
+
+          <select>
+            <option>Semua Kelas</option>
+            <option>IPA 01</option>
+            <option>IPA 02</option>
+            <option>IPS 01</option>
+          </select>
+        </div>
+
+        <!-- TABEL -->
+        <table class="table-aktivitas">
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>Tingkat</th>
+              <th>Kelas</th>
+              <th>Mata Pelajaran</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dante Sparda</td>
+              <td>XII</td>
+              <td>IPA 01</td>
+              <td>Bahasa Indonesia</td>
+              <td><span class="status on-progress">On Progress</span></td>
+            </tr>
+            <tr>
+              <td>Dante Sparda</td>
+              <td>XII</td>
+              <td>IPA 01</td>
+              <td>Bahasa Indonesia</td>
+              <td><span class="status submitted">Submitted</span></td>
+            </tr>
+            <tr>
+              <td>Vergil Sparda</td>
+              <td>XII</td>
+              <td>IPA 01</td>
+              <td>Bahasa Indonesia</td>
+              <td><span class="status blocked">Blocked</span></td>
+            </tr>
+            <tr>
+              <td>Lee Sin</td>
+              <td>XII</td>
+              <td>IPA 01</td>
+              <td>Bahasa Indonesia</td>
+              <td><span class="status blocked">Blocked</span></td>
+            </tr>
+            <tr>
+              <td>Vayne</td>
+              <td>XII</td>
+              <td>IPA 01</td>
+              <td>Bahasa Indonesia</td>
+              <td><span class="status blocked">Blocked</span></td>
+            </tr>
+            <tr>
+              <td>Aatrox</td>
+              <td>XII</td>
+              <td>IPA 01</td>
+              <td>Bahasa Indonesia</td>
+              <td><span class="status submitted">Submitted</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- PAGINATION -->
+        <div class="pagination">
+          <span>&lt;</span>
+          <p>1 dari 10</p>
+          <span>&gt;</span>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
