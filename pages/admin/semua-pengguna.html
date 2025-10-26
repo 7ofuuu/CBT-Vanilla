@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/global.css" />
+    <link rel="stylesheet" href="../../css/admin/semua-pengguna.css" />
+    <title>Semua Pengguna</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <div class="logo">
+          <img src="../../assets/logo-sekolah.png" alt="" />
+        </div>
+        <h1>SMAN 1 Parigi</h1>
+      </div>
+      <div class="header-right">
+        <div class="user-info">
+          <div class="user-text">
+            <span class="user-name">Braum Chad</span>
+            <span class="user-role">admin</span>
+          </div>
+          <div class="user-avatar">
+            <img src="../../assets/profile-admin.png" alt="User Avatar" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <nav class="sidebar">
+        <div class="menu-title">Menu</div>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            </svg>
+            <a href="home-admin.html">Beranda</a>
+          </li>
+          <li class="menu-item active">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>Pengguna</span>
+          </li>
+          <li class="menu-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span>Aktivitas</span>
+          </li>
+        </ul>
+        <button class="logout-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+          <span>Logout</span>
+        </button>
+      </nav>
+
+      <div class="content">
+        <h2 class="page-title">Daftar Pengguna</h2>
+
+        <div class="controls">
+          <input type="text" class="search-input" placeholder="Cari Pengguna" />
+          <button class="btn-add">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="10" r="8" stroke="white" stroke-width="2" />
+              <path d="M10 6V14M6 10H14" stroke="white" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            Tambah Pengguna
+          </button>
+        </div>
+
+        <div class="filters">
+          <select class="filter-select">
+            <option>Semua Tingkat</option>
+            <option>Tingkat 10</option>
+            <option>Tingkat 11</option>
+            <option>Tingkat 12</option>
+          </select>
+          <select class="filter-select">
+            <option>Semua Jurusan</option>
+            <option>IPA</option>
+            <option>IPS</option>
+            <option>Bahasa</option>
+          </select>
+          <select class="filter-select">
+            <option>Semua Kelas</option>
+            <option>Kelas A</option>
+            <option>Kelas B</option>
+            <option>Kelas C</option>
+          </select>
+        </div>
+
+        <table class="user-table">
+          <thead>
+            <tr>
+              <th>Foto</th>
+              <th>Username</th>
+              <th>Nama</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img src="../../assets/profile-admin.png" alt="User" class="user-avatar" /></td>
+              <td>Kanabawi</td>
+              <td>Ahmad Kanabawi</td>
+              <td>Siswa</td>
+            </tr>
+            <tr>
+              <td><img src="../../assets/profile-admin.png" alt="User" class="user-avatar" /></td>
+              <td>Jalil</td>
+              <td>Usman Abdul Jalil</td>
+              <td>Siswa</td>
+            </tr>
+            <tr>
+              <td><img src="../../assets/profile-admin.png" alt="User" class="user-avatar" /></td>
+              <td>Kashmiri</td>
+              <td>Khalid Kashmiri</td>
+              <td>Guru</td>
+            </tr>
+            <tr>
+              <td><img src="../../assets/profile-admin.png" alt="User" class="user-avatar" /></td>
+              <td>Sumbul</td>
+              <td>Muhammad Sumbul</td>
+              <td>Guru</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>
