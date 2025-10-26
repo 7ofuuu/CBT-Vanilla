@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/global.css" />
+    <link rel="stylesheet" href="../../css/admin/home-admin.css" />
+    <title>Home Admin</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <div class="logo">
+          <img src="../../assets/logo-sekolah.png" alt="" />
+        </div>
+        <h1>SMAN 1 Parigi</h1>
+      </div>
+      <div class="header-right">
+        <div class="user-info">
+          <div class="user-text">
+            <span class="user-name">Braum Chad</span>
+            <span class="user-role">admin</span>
+          </div>
+          <div class="user-avatar">
+            <img src="../../assets/profile-admin.png" alt="User Avatar" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <nav class="sidebar">
+        <div class="menu-title">Menu</div>
+        <ul class="menu-list">
+          <li class="menu-item active">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            </svg>
+            <span>Beranda</span>
+          </li>
+          <li class="menu-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <a href="semua-pengguna.html">Pengguna</a>
+          </li>
+          <li class="menu-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span>Aktivitas</span>
+          </li>
+        </ul>
+        <button class="logout-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+          <span>Logout</span>
+        </button>
+      </nav>
+
+      <div class="content">
+        <div class="welcome-banner">
+          <div class="welcome-avatar">
+            <!-- <img src="../../assets/profile-admin.png" alt="Admin Avatar" /> -->
+          </div>
+          <div class="welcome-text">
+            <h2>Selamat Datang Admin</h2>
+            <p>Selamat datang di dashboard admin. Di sini Anda dapat mengelola seluruh sistem dan memantau aktivitas terbaru,</p>
+          </div>
+        </div>
+
+        <div class="content-wrapper">
+          <div class="activities-section">
+            <h3>Aktivitas</h3>
+            <table class="activities-table">
+              <tbody>
+                <tr>
+                  <td>Braum Chad</td>
+                  <td>XII</td>
+                  <td>IPA 01</td>
+                  <td>Bahasa Indonesia</td>
+                  <td><span class="status on-progress">On Progress</span></td>
+                </tr>
+                <tr>
+                  <td>Braum Chad</td>
+                  <td>XII</td>
+                  <td>IPA 01</td>
+                  <td>Bahasa Indonesia</td>
+                  <td><span class="status submitted">Submited</span></td>
+                </tr>
+                <tr>
+                  <td>Braum Chad</td>
+                  <td>XII</td>
+                  <td>IPA 01</td>
+                  <td>Bahasa Indonesia</td>
+                  <td><span class="status blocked">Blocked</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="users-section">
+            <h3>Pengguna</h3>
+            <div class="user-card">
+              <img src="../../assets/profile-admin.png" alt="User" class="user-card-avatar" />
+              <div class="user-card-info">
+                <span class="user-card-name">Braum Chad</span>
+                <span class="user-card-role">Admin</span>
+              </div>
+            </div>
+            <button class="view-all-btn">Lihat Semua Pengguna</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
