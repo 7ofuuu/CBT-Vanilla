@@ -166,6 +166,19 @@ main { display: flex; margin-top: 70px; min-height: calc(100vh - 70px); }
   cursor: pointer;
   transition: background-color .3s, transform .1s;
 }
+
+.page-title a {
+  color: #d1d5db;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.page-title a:hover {
+  color: #111827;
+  text-decoration: underline;
+}
+
 .btn-confirm:hover { background: #0a3a5f; }
 .btn-confirm:active { transform: scale(.98); }
 
