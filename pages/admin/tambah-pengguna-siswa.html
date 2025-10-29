@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tambah Pengguna Siswa</title>
 
   <link rel="stylesheet" href="../../css/global.css" />
-  <link rel="stylesheet" href="../../css/admin/home-admin.css" />
   <link rel="stylesheet" href="../../css/admin/tambah-pengguna.css" />
 </head>
 
@@ -56,7 +54,7 @@
         </li>
       </ul>
 
-      <button class="logout-btn">
+      <button class="logout-btn" type="button">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
           <polyline points="16 17 21 12 16 7"></polyline>
@@ -70,27 +68,30 @@
       <div class="form-wrapper">
         <h2 class="page-title">Daftar Pengguna › <span>Tambah Pengguna Siswa</span></h2>
 
-        <form class="form-tambah-pengguna">
+        <form class="form-tambah-pengguna" autocomplete="off" novalidate>
           <div class="form-row">
             <div class="form-group">
               <label for="nama">Nama</label>
-              <input id="nama" type="text" placeholder="masukan nama" required />
+              <input id="nama" class="input" type="text" name="nama"
+                     placeholder="masukan nama *" required autocomplete="name" />
             </div>
             <div class="form-group">
               <label for="username">Username</label>
-              <input id="username" type="text" placeholder="Username" required />
+              <input id="username" class="input" type="text" name="username"
+                     placeholder="Username *" required autocomplete="username" />
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label for="password">Password</label>
-              <input id="password" type="password" placeholder="masukan password" required />
+              <input id="password" class="input" type="password" name="password"
+                     placeholder="masukan password *" required autocomplete="new-password" />
             </div>
             <div class="form-group">
               <label for="role">Role</label>
-              <select id="role" required>
-                <option value="">Pilih Role</option>
+              <!-- Tidak ada opsi "Pilih Role" -->
+              <select id="role" class="select" name="role" required>
                 <option value="guru">Guru</option>
                 <option value="siswa" selected>Siswa</option>
                 <option value="admin">Admin</option>
@@ -101,8 +102,8 @@
           <div class="form-row">
             <div class="form-group">
               <label for="jurusan">Jurusan</label>
-              <select id="jurusan" required>
-                <option value="">Pilih Jurusan</option>
+              <select id="jurusan" class="select" name="jurusan" required>
+                <option value="">Pilih Jurusan *</option>
                 <option value="ipa">IPA</option>
                 <option value="ips">IPS</option>
                 <option value="bahasa">Bahasa</option>
@@ -110,8 +111,8 @@
             </div>
             <div class="form-group">
               <label for="tingkat">Tingkat</label>
-              <select id="tingkat" required>
-                <option value="">Pilih Tingkat</option>
+              <select id="tingkat" class="select" name="tingkat" required>
+                <option value="">Pilih Tingkat *</option>
                 <option value="X">X</option>
                 <option value="XI">XI</option>
                 <option value="XII">XII</option>
@@ -120,14 +121,15 @@
           </div>
 
           <div class="form-row">
-            <div class="form-group" style="flex: 1;">
+            <div class="form-group" style="grid-column: 1 / -1;">
               <label for="kelas">Kelas</label>
-              <input id="kelas" type="text" placeholder="contoh: IPA 01" required />
+              <input id="kelas" class="input" type="text" name="kelas"
+                     placeholder="contoh: IPA 01 *" required />
             </div>
           </div>
 
           <div class="form-actions">
-            <button type="button" class="btn-cancel" onclick="window.history.back()">Batalkan</button>
+            <button type="button" class="btn-cancel">Batalkan</button>
             <button type="submit" class="btn-confirm">Konfirmasi</button>
           </div>
         </form>
@@ -135,23 +137,6 @@
     </div>
   </main>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const roleSelect = document.getElementById("role");
-
-      roleSelect.addEventListener("change", function () {
-        const selectedRole = this.value;
-
-        if (selectedRole === "guru") {
-          window.location.href = "tambah-pengguna-guru.html";
-        } else if (selectedRole === "admin") {
-          window.location.href = "tambah-pengguna.html";
-        } else if (selectedRole === "siswa") {
-          return;
-        }
-      });
-    });
-  </script>
+  <script src="../../js/admin/tambah-pengguna.js"></script>
 </body>
-
 </html>

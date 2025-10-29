@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tambah Pengguna</title>
 
   <link rel="stylesheet" href="../../css/global.css" />
-  <link rel="stylesheet" href="../../css/admin/home-admin.css" />
   <link rel="stylesheet" href="../../css/admin/tambah-pengguna.css" />
 </head>
 
@@ -56,7 +54,7 @@
         </li>
       </ul>
 
-      <button class="logout-btn">
+      <button class="logout-btn" type="button">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
           <polyline points="16 17 21 12 16 7"></polyline>
@@ -70,27 +68,27 @@
       <div class="form-wrapper">
         <h2 class="page-title">Daftar Pengguna › <span>Tambah Pengguna</span></h2>
 
-        <form class="form-tambah-pengguna">
+        <form class="form-tambah-pengguna" autocomplete="off" novalidate>
           <div class="form-row">
             <div class="form-group">
               <label for="nama">Nama</label>
-              <input id="nama" type="text" placeholder="masukan nama" required />
+              <input id="nama" class="input" type="text" name="nama" placeholder="masukan nama *" required />
             </div>
             <div class="form-group">
               <label for="username">Username</label>
-              <input id="username" type="text" placeholder="Username" required />
+              <input id="username" class="input" type="text" name="username" placeholder="Username *" required />
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label for="password">Password</label>
-              <input id="password" type="password" placeholder="masukan password" required />
+              <input id="password" class="input" type="password" name="password" placeholder="masukan password *" required />
             </div>
             <div class="form-group">
               <label for="role">Role</label>
-              <select id="role" required>
-                <option value="">Pilih Role</option>
+              <select id="role" class="select" name="role" required>
+                <option value="">Pilih Role *</option>
                 <option value="guru">Guru</option>
                 <option value="siswa">Siswa</option>
                 <option value="admin">Admin</option>
@@ -107,24 +105,6 @@
     </div>
   </main>
 
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const roleSelect = document.getElementById("role");
-
-    roleSelect.addEventListener("change", function () {
-      const selectedRole = this.value;
-
-      if (selectedRole === "siswa") {
-        window.location.href = "tambah-pengguna-siswa.html";
-      }
-
-      else if (selectedRole === "guru") {
-        window.location.href = "tambah-pengguna-guru.html";
-      }
-    });
-  });
-</script>
-
+  <script src="../../js/admin/tambah-pengguna.js"></script>
 </body>
-
 </html>
