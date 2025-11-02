@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../css/global.css" />
     <link rel="stylesheet" href="../../css/admin/home-admin.css" />
+    <script src="../../js/admin/home-admin.js" defer></script>
     <title>Home Admin</title>
   </head>
   <body>
@@ -18,8 +19,8 @@
       <div class="header-right">
         <div class="user-info">
           <div class="user-text">
-            <span class="user-name">Braum Chad</span>
-            <span class="user-role">admin</span>
+            <span id="username" class="user-name">Braum Chad</span>
+            <span id="user-role" class="user-role"></span>
           </div>
           <div class="user-avatar">
             <img src="../../assets/profile-admin.png" alt="User Avatar" />
@@ -53,7 +54,7 @@
             <span>Aktivitas</span>
           </li>
         </ul>
-        <button class="logout-btn">
+        <button onclick="logout()" class="logout-btn">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
             <polyline points="16 17 21 12 16 7"></polyline>
@@ -66,7 +67,7 @@
       <div class="content">
         <div class="welcome-banner">
           <div class="welcome-avatar">
-            <!-- <img src="../../assets/profile-admin.png" alt="Admin Avatar" /> -->
+            <img src="../../assets/asset1.png" alt="Admin Avatar" />
           </div>
           <div class="welcome-text">
             <h2>Selamat Datang Admin</h2>
