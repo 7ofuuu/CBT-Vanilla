@@ -199,6 +199,114 @@ main {
   font-size: 14px;
 }
 
+/* Detail Aktivitas Page Styles */
+.detail-container {
+    padding: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+
+.user-detail {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.user-detail .user-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.user-detail .user-info h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.user-detail .user-info p {
+    margin: 0.5rem 0;
+    color: #666;
+}
+
+.user-detail .status {
+    margin-top: 0.5rem;
+}
+
+.user-detail .status-badge {
+    margin-left: 0.5rem;
+}
+
+.violation-section,
+.code-section {
+    margin-top: 2rem;
+}
+
+.violation-section h3,
+.code-section h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.violation-box {
+    background: #F8F9FA;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #E9ECEF;
+}
+
+.code-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.code-container input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #E9ECEF;
+    border-radius: 8px;
+    background: #F8F9FA;
+    font-family: monospace;
+}
+
+.generate-btn {
+    background: #FF0000;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.generate-btn:hover {
+    background: #E60000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .user-detail {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .code-container {
+        flex-direction: column;
+    }
+
+    .generate-btn {
+        width: 100%;
+    }
+}
+
 .card-body {
   padding: 12px 14px;
   font-size: 12px;
@@ -367,6 +475,12 @@ main {
   color: #111827;
   text-decoration: underline;
 }
+
+.filters-row select {
+  min-width: 180px;
+  text-transform: capitalize;
+}
+
 @media (max-width: 920px) {
   .container {
     margin-left: 0;
@@ -385,3 +499,4 @@ main {
     flex-direction: column;
   }
 }
+
