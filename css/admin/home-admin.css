@@ -125,6 +125,11 @@ main {
   stroke-width: 2;
 }
 
+.menu-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .menu-item:hover {
   background-color: #f5f5f5;
 }

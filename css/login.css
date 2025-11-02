@@ -113,7 +113,6 @@
   transform: scale(0.98);
 }
 
-/* Responsive Design */
 @media (max-width: 480px) {
   .login-card {
     padding: 40px 30px;
