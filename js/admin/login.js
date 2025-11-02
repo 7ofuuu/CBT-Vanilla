@@ -26,18 +26,16 @@ function fetchUser() {
 console.log(fetchUser());
 
 function validateLogin(event) {
-  //   event.preventDefault(); // Prevent form submission
+  const usernameInput = document.getElementById('username').value;
+  const passwordInput = document.getElementById('password').value;
 
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-
-  if (username === '' || password === '') {
+  if (usernameInput === '' || passwordInput === '') {
     alert('Please fill in all fields');
     return false;
   }
 
   fetchUser().then(users => {
-    const user = users.find(u => u.username === username && u.password === password);
+    const user = users.find(u => u.username === usernameInput && u.password === passwordInput);
 
     if (user) {
       alert('Login successful');
