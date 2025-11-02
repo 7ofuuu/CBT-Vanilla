@@ -1,14 +1,3 @@
-function handleRoleChange(e) {
-    const v = e.target.value;
-    if (v === "siswa") {
-        window.location.href = "tambah-pengguna-siswa.html";
-    } else if (v === "guru") {
-        window.location.href = "tambah-pengguna-guru.html";
-    } else if (v === "admin") {
-        window.location.href = "tambah-pengguna-admin.html";
-    }
-}
-
 function initBreadcrumb() {
     const breadcrumb = document.querySelector(".breadcrumb-back");
     if (!breadcrumb) return;
