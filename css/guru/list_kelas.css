@@ -1,0 +1,35 @@
+.search-bar input#searchInput {
+  border: none;
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.exam-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.exam-card {
+  width: 240px;
+}
+
+.logout-btn {
+  cursor: pointer;
+}
+
+.kelas-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.kelas-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}

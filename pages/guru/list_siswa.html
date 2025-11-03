@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../../css/global.css" />
   <link rel="stylesheet" href="../../css/guru/hasil_ujian.css" />
-  <link rel="stylesheet" href="../../assets/css/guru/style.css">
-  <title>Hasil Ujian</title>
+  <link rel="stylesheet" href="../../css/guru/list_siswa.css" />
+  <title>Hasil Ujian - List Siswa</title>
 </head>
 <body>
   <header>
@@ -75,15 +75,10 @@
     </nav>
 
     <section class="main-content">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-        <h2 class="content-title">Hasil Ujian</h2>
-        <div>
-          <button id="addExamBtn" class="btn-primary" style="padding:8px 12px;border-radius:6px">Tambah Ujian</button>
-        </div>
-      </div>
+      <h2 class="content-title">Hasil Ujian &nbsp;›&nbsp; Matematika &nbsp;›&nbsp; <strong>XII - IPA 1</strong></h2>
 
       <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Cari Ujian" />
+        <input type="text" id="searchInput" placeholder="Cari Siswa" />
         <button id="searchBtn">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <circle cx="11" cy="11" r="8"></circle>
@@ -92,7 +87,61 @@
         </button>
       </div>
 
-      <div class="exam-grid" id="examGrid" data-init="true">
+      <div class="table-wrap">
+        <table class="student-table">
+          <thead>
+            <tr>
+              <th>Foto</th>
+              <th>Mapel</th>
+              <th>Nama</th>
+              <th>Nilai</th>
+              <th>Kelas</th>
+              <th>Selesai</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img class="avatar" src="../../assets/profile-admin.png" alt="av"></td>
+              <td>Matematika</td>
+              <td>Braum Chad</td>
+              <td>Not Reviewed</td>
+              <td>IPA 01</td>
+              <td>06 Apr 2025</td>
+            </tr>
+            <tr>
+              <td><img class="avatar" src="../../assets/profile-admin.png" alt="av"></td>
+              <td>Matematika</td>
+              <td>Bradley Walker</td>
+              <td>94</td>
+              <td>IPA 01</td>
+              <td>06 Apr 2025</td>
+            </tr>
+            <tr>
+              <td><img class="avatar" src="../../assets/profile-admin.png" alt="av"></td>
+              <td>Matematika</td>
+              <td>Allen Wane</td>
+              <td>Not Reviewed</td>
+              <td>IPA 01</td>
+              <td>06 Apr 2025</td>
+            </tr>
+            <tr>
+              <td><img class="avatar" src="../../assets/profile-admin.png" alt="av"></td>
+              <td>Matematika</td>
+              <td>Bruce Ley</td>
+              <td>86</td>
+              <td>IPA 01</td>
+              <td>06 Apr 2025</td>
+            </tr>
+            <tr>
+              <td><img class="avatar" src="../../assets/profile-admin.png" alt="av"></td>
+              <td>Matematika</td>
+              <td>Bruce Ley</td>
+              <td>86</td>
+              <td>IPA 01</td>
+              <td>06 Apr 2025</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
   </main>
