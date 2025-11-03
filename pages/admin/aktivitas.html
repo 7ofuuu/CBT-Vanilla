@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aktivitas | SMAN 1 Parigi</title>
+  <title>Aktivitas</title>
 
   <link rel="stylesheet" href="../../css/global.css" />
-  <link rel="stylesheet" href="../../css/admin/home-admin.css" />
   <link rel="stylesheet" href="../../css/admin/aktivitas.css" />
+
 </head>
 
 <body>
   <header>
     <div class="header-left">
-      <div class="logo">
-        <img src="../../assets/logo-sekolah.png" alt="Logo" />
-      </div>
+      <div class="logo"><img src="../../assets/logo-sekolah.png" alt="Logo" /></div>
       <h1>SMAN 1 Parigi</h1>
     </div>
-
     <div class="header-right">
       <div class="user-info">
         <div class="user-text">
@@ -69,97 +65,47 @@
       </button>
     </nav>
 
-    <div class="content">
-      <div class="activity-wrapper">
-        <h2 class="page-title">Aktivitas</h2>
+    <div class="container">
+      <h2 class="page-title">
+        <span>Aktivitas</span>
+      </h2>
 
-        <div class="filter-container">
+      <div class="filters-row">
+        <div class="filter">
           <select>
-            <option>Semua Tingkat</option>
-            <option>X</option>
-            <option>XI</option>
-            <option>XII</option>
+            <option>Semua Jenis Ujian</option>
           </select>
-
+        </div>
+        <div class="filter">
           <select>
             <option>Semua Jurusan</option>
-            <option>IPA</option>
-            <option>IPS</option>
-            <option>Bahasa</option>
           </select>
-
+        </div>
+        <div class="filter">
           <select>
             <option>Semua Kelas</option>
-            <option>IPA 01</option>
-            <option>IPA 02</option>
-            <option>IPS 01</option>
           </select>
         </div>
-
-        <table class="table-aktivitas">
-          <thead>
-            <tr>
-              <th>Nama</th>
-              <th>Tingkat</th>
-              <th>Kelas</th>
-              <th>Mata Pelajaran</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Dante Sparda</td>
-              <td>XII</td>
-              <td>IPA 01</td>
-              <td>Bahasa Indonesia</td>
-              <td><span class="status on-progress">On Progress</span></td>
-            </tr>
-            <tr>
-              <td>Dante Sparda</td>
-              <td>XII</td>
-              <td>IPA 01</td>
-              <td>Bahasa Indonesia</td>
-              <td><span class="status submitted">Submitted</span></td>
-            </tr>
-            <tr>
-              <td>Vergil Sparda</td>
-              <td>XII</td>
-              <td>IPA 01</td>
-              <td>Bahasa Indonesia</td>
-              <td><span class="status blocked">Blocked</span></td>
-            </tr>
-            <tr>
-              <td>Lee Sin</td>
-              <td>XII</td>
-              <td>IPA 01</td>
-              <td>Bahasa Indonesia</td>
-              <td><span class="status blocked">Blocked</span></td>
-            </tr>
-            <tr>
-              <td>Vayne</td>
-              <td>XII</td>
-              <td>IPA 01</td>
-              <td>Bahasa Indonesia</td>
-              <td><span class="status blocked">Blocked</span></td>
-            </tr>
-            <tr>
-              <td>Aatrox</td>
-              <td>XII</td>
-              <td>IPA 01</td>
-              <td>Bahasa Indonesia</td>
-              <td><span class="status submitted">Submitted</span></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div class="pagination">
-          <span>&lt;</span>
-          <p>1 dari 10</p>
-          <span>&gt;</span>
+        <div class="filter">
+          <select>
+            <option>Semua Mapel</option>
+          </select>
         </div>
+        <div class="filter">
+          <select>
+            <option>Status</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="cards-grid"></div>
+
+      <div class="pagination">
+        <span>&lt; 1 dari 10 &gt;</span>
       </div>
     </div>
   </main>
-</body>
 
+  <script src="../../js/admin/aktivitas.js"></script>
+</body>
 </html>
