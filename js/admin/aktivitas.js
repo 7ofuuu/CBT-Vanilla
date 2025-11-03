@@ -390,7 +390,7 @@ function ensureAddPesertaButton() {
             tingkat: "XII",
             kelas: "XII IPA 01",
             mapel: "Matematika",
-            status: "onprogress"
+            status: "blocked"
         };
 
         map[aktifKey] = [newPeserta, ...list];
@@ -503,7 +503,7 @@ function initUnblockForm() {
         statusLabel.classList.add("onprogress");
         if (msg) {
             msg.style.color = "#217a3d";
-            msg.textContent = "✅ Status berhasil diperbarui!";
+            msg.textContent = "Status berhasil diperbarui!";
         }
         input.value = "";
     });
