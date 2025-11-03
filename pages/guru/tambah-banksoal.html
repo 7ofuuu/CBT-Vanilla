@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tambah Bank Soal - SMAN 1 Parigi</title>
+  <link rel="stylesheet" href="../../css/guru/tambah-banksoal.css">
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <img src="../../assets/logo-sekolah.png" alt="Logo Sekolah" class="logo">
+      <h1>SMAN 1 Parigi</h1>
+    </div>
+    <div class="header-right">
+      <div class="user-info">
+        <div class="user-text">
+          <span class="user-name">Naafiri</span>
+          <span class="user-role">Guru</span>
+        </div>
+        <img src="../../assets/profile-admin.png" alt="User Avatar" class="avatar">
+      </div>
+    </div>
+  </header>
+
+  <aside class="sidebar">
+    <nav>
+      <a href="#">Menu</a>
+      <a href="home-guru.html">Beranda</a>
+      <a href="banksoal.html" class="active">Bank Soal</a>
+      <a href="jadwal-ujian.html">Jadwal Ujian</a>
+      <a href="hasil_ujian.html">Hasil Ujian</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="breadcrumb">
+      <span class="gray">Bank Soal ></span>
+      <span>Tambah Bank Soal</span>
+      <button id="addBankBtn" class="add-button">Tambahkan</button>
+    </div>
+
+    <div class="form-container">
+      <div class="form-header">
+        <div class="title-section">
+          <div class="toolbar">
+            <button data-cmd="bold">B</button>
+            <button data-cmd="italic"><i>I</i></button>
+            <button data-cmd="underline"><u>U</u></button>
+          </div>
+          <div id="bankTitle" contenteditable="true" class="title-input" placeholder="Judul Bank Soal">Matematika</div>
+        </div>
+
+        <input type="text" placeholder="Deskripsi Bank Soal" class="desc-input">
+        <div class="dropdowns">
+          <select><option>Tingkat</option></select>
+          <select><option>Jurusan</option></select>
+          <select><option>Mapel</option></select>
+        </div>
+      </div>
+
+      <div id="questionContainer" class="question-container"></div>
+    </div>
+
+    <div class="bottom-toolbar">
+      <button title="Tambah Soal Pilihan Ganda" id="addQuestionBtn">
+        <img src="../../assets/icon/guru_tambahsoal/add video.png" alt="PG">
+      </button>
+      <button title="Tambah Soal Essay">
+        <img src="../../assets/icon/guru_tambahsoal/add video-1.png" alt="Essay">
+      </button>
+      <button title="Tambahkan Gambar">
+        <img src="../../assets/icon/guru_tambahsoal/Vector.png" alt="Gambar">
+      </button>
+      <button title="Tambah Rumus">
+        <img src="../../assets/icon/guru_tambahsoal/Vector-1.png" alt="Rumus">
+      </button>
+      <button title="Upload File">
+        <img src="../../assets/icon/guru_tambahsoal/Vector-2.png" alt="File">
+      </button>
+    </div>
+  </main>
+
+  <script src="../../js/guru/tambah-soal.js"></script>
+</body>
+</html>
