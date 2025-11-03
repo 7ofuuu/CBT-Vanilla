@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{background:#f4f6fb;display:flex;min-height:100vh;}
+header{position:fixed;top:0;left:0;width:100%;background:#fff;padding:1rem 2rem;
+display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 3px rgba(0,0,0,.1);
+height:70px;z-index:100}
+.header-left{display:flex;align-items:center;gap:1rem;}
+.logo img{width:50px;height:50px;}
+.header-left h1{font-size:1.3rem;font-weight:600;}
+.user-info{display:flex;align-items:center;gap:1rem;}
+.user-text{text-align:right;}
+.user-name{font-weight:600;}
+.user-role{color:#666;font-size:.9rem;}
+.user-avatar{width:45px;height:45px;border-radius:50%;overflow:hidden;}
+.user-avatar img{width:100%;height:100%;object-fit:cover;}
+
+.sidebar{width:240px;background:#f1f3f8;display:flex;flex-direction:column;justify-content:space-between;
+border-right:1px solid #dce1ef;}
+.logo{text-align:center;margin-top:15px;}
+.sidebar nav{margin-top:30px;}
+.sidebar nav a{display:flex;align-items:center;padding:10px 30px;text-decoration:none;color:#555;font-size:15px;transition:.25s;}
+.sidebar nav a img{width:20px;margin-right:12px;filter:grayscale(100%);opacity:.7;}
+.sidebar nav a.active,.sidebar nav a:hover{background:#e6edff;color:#003366;border-right:4px solid #003366;}
+.sidebar nav a.active img,.sidebar nav a:hover img{filter:none;opacity:1;}
+.sidebar-bottom{border-top:1px solid #dce1ef;padding:15px 20px;}
+.logout{display:flex;align-items:center;text-decoration:none;color:#c0392b;font-weight:500;font-size:14px;padding:8px 0;}
+.logout img{width:18px;margin-right:8px;}
+
+.main{flex:1;padding:100px 40px 40px 40px;background:#fff;overflow-y:auto;}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
+.topbar h2{font-size:24px;font-weight:600;color:#111;}
+.btn-add{background:#003366;color:#fff;border:none;padding:10px 18px;border-radius:10px;
+font-weight:500;font-size:15px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:.2s;}
+.btn-add:hover{background:#002855;}
+.btn-add span{font-size:18px;font-weight:700;}
+
+.search-box{position:relative;margin-bottom:30px;}
+.search-box input{width:100%;padding:12px 45px 12px 20px;border:2px solid #e0e4ef;border-radius:12px;font-size:15px;outline:none;}
+.search-box img{position:absolute;right:15px;top:50%;transform:translateY(-50%);width:22px;opacity:0.6;}
+
+.banksoal-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:20px;
+}
+
+/* CARD GAYA BARU */
+.card{
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 3px 10px rgba(0,0,0,0.08);
+  transition:.2s;
+  border:1px solid #e5e8ef;
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,0.12);}
+
+/* header warna */
+.card h3{
+  background:#0f6fa5; /* default warna (biru) */
+  color:#fff;
+  font-size:18px;
+  font-weight:700;
+  padding:15px 16px 0 16px;
+  margin-bottom:0;
+}
+.card .sub{
+  background:#0f6fa5;
+  color:#fff;
+  padding:0 16px 15px 16px;
+  font-weight:500;
+  font-size:14px;
+}
+
+/* isi */
+.card .info{
+  padding:18px 20px;
+}
+.card .info p{
+  font-size:15px;
+  color:#000;
+  margin-bottom:8px;
+  display:flex;
+  justify-content:space-between;
+}
+
+/* warna header berbeda tiap mapel */
+.head-blue h3, .head-blue .sub{background:#0e7490;}       /* biru */
+.head-orange h3, .head-orange .sub{background:#f97316;}   /* oranye */
+.head-green h3, .head-green .sub{background:#80D8C3;}     /* hijau muda */
+.head-pink h3, .head-pink .sub{background:#c084fc;}       /* ungu */
+.head-teal h3, .head-teal .sub{background:#06b6d4;}       /* biru muda */
+
+/* responsive */
+@media(max-width:880px){
+  .sidebar{display:none;}
+  body{display:block;}
+  .main{padding:100px 20px;}
+}

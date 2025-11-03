@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>Bank Soal - SMAN 1 Parigi</title>
+  <link rel="stylesheet" href="../../css/guru/banksoal.css">
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <div class="logo">
+        <img src="../../assets/logo-sekolah.png" alt="Logo Sekolah" />
+      </div>
+      <h1>SMAN 1 Parigi</h1>
+    </div>
+    <div class="header-right">
+      <div class="user-info">
+        <div class="user-text">
+          <span class="user-name">Naafiri</span>
+          <span class="user-role">Guru</span>
+        </div>
+        <div class="user-avatar">
+          <img src="../../assets/profile-admin.png" alt="User Avatar" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <div class="logo">
+        <br><br><br>
+        <div class="">Menu</div>
+      </div>
+      <nav>
+        <a href="index.html"><img src="../../assets/icon/logo-home.png" alt="">Beranda</a>
+        <a href="banksoal.html" class="active"><img src="../../assets/icon/logo-banksoal.png" alt="">Bank Soal</a>
+        <a href="jadwal-ujian.html"><img src="../../assets/icon/logo-jadwalujian.png" alt="">Jadwal Ujian</a>
+        <a href="#"><img src="../../assets/icon/logo-hasilujian.png" alt="">Hasil Ujian</a>
+      </nav>
+    </div>
+
+    <div class="sidebar-bottom">
+      <a class="logout" href="#"><img src="assets/icon/logo-logout.png" alt="">Logout</a>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <h2>Bank Soal</h2>
+      <a href="tambah-banksoal.html"><button class="btn-add"><span>+</span> Tambah Bank Soal</button></a>
+    </div>
+
+    <div class="search-box">
+      <input type="text" placeholder="Cari Bank Soal">
+      <img src="../../assets/icon/search.png" alt="Cari">
+    </div>
+
+    <div class="banksoal-grid">
+      <!-- Bank soal cards will be loaded here dynamically -->
+    </div>
+    <script src="../../js/guru/banksoal.js"></script>
+  </main>
+</body>
+</html>

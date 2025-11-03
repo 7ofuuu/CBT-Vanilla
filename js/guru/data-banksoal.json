@@ -1,0 +1,54 @@
+{
+  "title": "Bahasa Indonesia",
+  "description": "Bank soal ini menyediakan ragam jenis soal utama untuk mengaji kompetensi siswa: soal pilihan ganda dan soal esai. Soal pilihan ganda dirancang untuk mengukur pemahaman siswa secara objektif, mencakup materi seperti tata bahasa, pemahaman teks, dan sastra dengan opsi jawaban yang jelas. Sementara itu, soal esai menuntut kemampuan analisis dan ekspresi tertulis, seperti menyusun argumen, menginterpretasi teks, atau menulis karangan singkat. Kedua jenis soal ini saling melengkapi, memastikan evaluasi yang komprehensif terhadap keterampilan berbahasa siswa.",
+  "tingkat": "",
+  "jurusan": "",
+  "mapel": "Bahasa Indonesia",
+  "questions": [
+    {
+      "id": 1,
+      "type": "pilgan",
+      "question": "Bacalah kutipan cerpen berikut! \nSangat sedia berwarna hingga ketika Rico berjalan menyusuri jalan kumuh. M terhenyak ketika melihat bocah kecil sedang ber-baru terhadap sampahnya.",
+      "options": [
+        "Kesedihan akan masa lalu",
+        "Kekumuhan pola disinfektan dalam hal sederhana",
+        "Pentingnya mengejar cita-cita",
+        "Kekuatan persahabatan",
+        "Ketakutan akan kesendiran"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 2,
+      "type": "essay",
+      "question": "Jelaskan makna simbol 'jingga senja berwarna' dalam kutipan cerpen di atas! Kemudian, analisis bagaimana kutipan tersebut mempengaruhi pemaknaan (Jawaban ditulis berdasarkan: ketepatan interpretasi, logika analisis, dan struktur penulisan)",
+      "answer": ""
+    },
+    {
+      "id": 3,
+      "type": "pilgan",
+      "question": "Manakah kalimat berikut yang menggunakan kata penghubung korelatif dengan benar?",
+      "options": [
+        "Baik dia datang maupun tidak, acara akan tetap berlangsung",
+        "B. Dia tidak hanya pendai beryani tetapi juga materi",
+        "Entah dia lupa entah sengaja tugasnya tidak dikumpulkan",
+        "Karena hujan lebat sehingga jatanan tergenang",
+        "Janganlah berani, beraapa saja ia sudah kehilangan napas"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 4,
+      "type": "pilgan",
+      "question": "Manakah penulisan kalimat langsung yang benar?",
+      "options": [
+        "Ibu berkata: 'Jangan pulang terlalu malam!'",
+        "Ibu berkata: 'jangan pulang terlalu malam!'",
+        "Ibu berkata: 'Jangan pulang terlalu malam!'",
+        "Ibu berkata: 'jangan pulang terlalu malam!'",
+        "Ibu berkata: 'Jangan pulang terlalu malam!'"
+      ],
+      "correctAnswer": 4
+    }
+  ]
+}

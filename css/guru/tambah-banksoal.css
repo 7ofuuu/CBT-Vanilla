@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body {
+  background: #f4f6fb;
+  display: flex;
+  min-height: 100vh;
+  color: #111;
+}
+
+/* ===== Header ===== */
+header {
+  position: fixed; top: 0; left: 0; width: 100%; height: 70px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 2rem; z-index: 100;
+}
+
+.logo { width: 50px; height: 50px; }
+.header-left { display: flex; align-items: center; gap: 1rem; }
+.header-left h1 { font-size: 1.3rem; font-weight: 600; }
+
+.header-right .user-info { display: flex; align-items: center; gap: 1rem; }
+.user-text { text-align: right; }
+.user-name { font-weight: 600; }
+.user-role { color: #666; font-size: 0.9rem; }
+.avatar { width: 45px; height: 45px; border-radius: 50%; }
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 240px;
+  background: #f1f3f8;
+  border-right: 1px solid #dce1ef;
+  padding-top: 80px;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 12px 30px;
+  color: #444;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sidebar nav a.active {
+  background: #e6edff;
+  border-right: 4px solid #003366;
+  color: #003366;
+}
+
+/* ===== Main ===== */
+main {
+  flex: 1;
+  padding: 90px 50px 60px 50px;
+  overflow-y: auto;
+}
+
+.breadcrumb {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.breadcrumb .gray { color: #bbb; font-weight: 500; }
+
+.form-container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  padding: 20px;
+  border-top: 8px solid #003366;
+}
+
+.title-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toolbar button {
+  background: none;
+  border: none;
+  font-weight: 700;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.title-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 6px;
+}
+
+.desc-input {
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.dropdowns {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.dropdowns select {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* ===== Question Cards ===== */
+.question-card {
+  border: 1.5px solid #c6d4f0;
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 20px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.question-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 10px;
+}
+
+.question-text {
+  background: #f2f2f2;
+  padding: 10px;
+  border-radius: 4px;
+  width: 75%;
+  min-height: 80px;
+  border: none;
+  outline: none;
+  resize: vertical;
+  font-size: 14px;
+}
+
+.question-controls select {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.options {
+  margin-top: 10px;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.option-item input[type="radio"] { margin-right: 10px; }
+
+.option-item input[type="text"] {
+  flex: 1;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 4px;
+  outline: none;
+}
+
+.option-item button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #777;
+  cursor: pointer;
+}
+
+.add-option {
+  font-size: 14px;
+  color: #003366;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.add-button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #45a049;
+}
+
+.essay-answer {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  margin-top: 10px;
+  padding: 6px;
+  outline: none;
+  min-height: 60px;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.card-actions button {
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.bottom-toolbar {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 60px;
+}
+
+.bottom-toolbar button {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.bottom-toolbar button:hover {
+  background: #f1f1f1;
+}
