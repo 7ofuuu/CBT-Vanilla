@@ -11,12 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function loadExamSchedules() {
-        const schedules = JSON.parse(localStorage.getItem('examSchedules') || '[]');
         cardsGrid.innerHTML = '';
-
         const bgColors = ['bg-teal', 'bg-blue', 'bg-orange', 'bg-yellow', 'bg-purple'];
 
-        schedules.forEach((schedule, index) => {
+        examData.getAllSchedules().forEach((schedule, index) => {
             const bgColor = bgColors[index % bgColors.length];
             const card = createCardElement(schedule, bgColor);
             cardsGrid.appendChild(card);
@@ -24,13 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function deleteSchedule(id) {
-        let schedules = JSON.parse(localStorage.getItem('examSchedules') || '[]');
-        schedules = schedules.filter(schedule => schedule.id !== id);
-        localStorage.setItem('examSchedules', JSON.stringify(schedules));
+        examData.deleteSchedule(id);
     }
 
     function editSchedule(schedule) {
-        localStorage.setItem('editingSchedule', JSON.stringify(schedule));
+        window.sessionStorage.setItem('editingSchedule', JSON.stringify(schedule));
         window.location.href = 'tambah-ujian.html?mode=edit';
     }
 
@@ -77,8 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const searchTerm = searchInput.value.toLowerCase();
         const [jurusan, tingkat, kelas] = Array.from(filterSelects).map(select => select.value);
 
-        const schedules = JSON.parse(localStorage.getItem('examSchedules') || '[]');
-        const filteredSchedules = schedules.filter(schedule => {
+        const filteredSchedules = examData.getAllSchedules().filter(schedule => {
             const matchesSearch = 
                 schedule.nama.toLowerCase().includes(searchTerm) ||
                 schedule.mapel.toLowerCase().includes(searchTerm);
