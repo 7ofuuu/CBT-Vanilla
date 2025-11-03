@@ -1,6 +1,6 @@
 // ==================== USER DATA ====================
 // User data array
-const users = [
+let users = [
   {
     username: 'agus',
     password: 'admin123',
@@ -44,9 +44,15 @@ const users = [
   },
 ];
 
-// Get deleted users from localStorage
+// Load updated users from sessionStorage if available
+const updatedUsersData = sessionStorage.getItem('updatedUsers');
+if (updatedUsersData) {
+  users = JSON.parse(updatedUsersData);
+}
+
+// Get deleted users from sessionStorage
 function getDeletedUsers() {
-  const deleted = localStorage.getItem('deletedUsers');
+  const deleted = sessionStorage.getItem('deletedUsers');
   return deleted ? JSON.parse(deleted) : [];
 }
 
@@ -183,8 +189,8 @@ function displayUsers() {
 
     row.style.cursor = 'pointer';
     row.addEventListener('click', () => {
-      // Store selected user in localStorage
-      localStorage.setItem('selectedUser', JSON.stringify(user));
+      // Store selected user in sessionStorage
+      sessionStorage.setItem('selectedUser', JSON.stringify(user));
 
       // Navigate to detail page based on role
       if (user.role === 'guru') {
@@ -209,8 +215,8 @@ if (document.readyState === 'loading') {
 
 // ==================== USER DETAIL PAGE ====================
 function displayUserDetail() {
-  // Get the selected user from localStorage
-  const selectedUserData = localStorage.getItem('selectedUser');
+  // Get the selected user from sessionStorage
+  const selectedUserData = sessionStorage.getItem('selectedUser');
 
   if (!selectedUserData) {
     console.log('No selected user found');
@@ -293,8 +299,8 @@ if (window.location.pathname.includes('detail-pengguna')) {
 
 // ==================== DELETE USER FUNCTION ====================
 function hapusPengguna() {
-  // Get the selected user from localStorage
-  const selectedUserData = localStorage.getItem('selectedUser');
+  // Get the selected user from sessionStorage
+  const selectedUserData = sessionStorage.getItem('selectedUser');
 
   if (!selectedUserData) {
     alert('Tidak ada pengguna yang dipilih');
@@ -316,16 +322,17 @@ function hapusPengguna() {
   // Add this user to deleted list
   if (!deletedUsers.includes(selectedUser.username)) {
     deletedUsers.push(selectedUser.username);
-    localStorage.setItem('deletedUsers', JSON.stringify(deletedUsers));
+    sessionStorage.setItem('deletedUsers', JSON.stringify(deletedUsers));
   }
 
-  localStorage.removeItem('selectedUser');
+  sessionStorage.removeItem('selectedUser');
 
   alert('Pengguna berhasil dihapus!');
 
   window.location.href = 'semua-pengguna.html';
 }
 
+// Attach delete function to button
 if (window.location.pathname.includes('detail-pengguna')) {
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
@@ -333,11 +340,87 @@ if (window.location.pathname.includes('detail-pengguna')) {
       if (deleteBtn) {
         deleteBtn.addEventListener('click', hapusPengguna);
       }
+
+      const saveBtn = document.querySelector('.btn-save');
+      if (saveBtn) {
+        saveBtn.addEventListener('click', simpanPerubahan);
+      }
     });
   } else {
     const deleteBtn = document.querySelector('.btn-delete');
     if (deleteBtn) {
       deleteBtn.addEventListener('click', hapusPengguna);
     }
+
+    const saveBtn = document.querySelector('.btn-save');
+    if (saveBtn) {
+      saveBtn.addEventListener('click', simpanPerubahan);
+    }
+  }
+}
+
+// ==================== SAVE/UPDATE USER FUNCTION ====================
+function simpanPerubahan() {
+  // Get the selected user from sessionStorage
+  const selectedUserData = sessionStorage.getItem('selectedUser');
+
+  if (!selectedUserData) {
+    alert('Tidak ada pengguna yang dipilih');
+    return;
+  }
+
+  const selectedUser = JSON.parse(selectedUserData);
+  const oldUsername = selectedUser.username;
+
+  // Get updated values from form
+  const updatedUser = {
+    username: document.getElementById('username-field').value,
+    password: document.getElementById('password').value,
+    nama: document.getElementById('nama').value,
+    role: document.getElementById('role').value,
+    foto: selectedUser.foto,
+  };
+
+  // Add siswa-specific fields if they exist
+  const jurusanInput = document.getElementById('jurusan');
+  if (jurusanInput) {
+    updatedUser.jurusan = jurusanInput.value;
+  }
+
+  const tingkatInput = document.getElementById('tingkat');
+  if (tingkatInput) {
+    updatedUser.tingkat = tingkatInput.value;
+  }
+
+  const kelasInput = document.getElementById('kelas');
+  if (kelasInput) {
+    updatedUser.kelas = kelasInput.value;
+  }
+
+  // Validate required fields
+  if (!updatedUser.username || !updatedUser.password || !updatedUser.nama) {
+    alert('Mohon lengkapi semua field yang wajib diisi');
+    return;
+  }
+
+  // Find and update user in array
+  const userIndex = users.findIndex(u => u.username === oldUsername);
+
+  if (userIndex !== -1) {
+    // Update the user in the array
+    users[userIndex] = updatedUser;
+
+    // Update sessionStorage with new data
+    sessionStorage.setItem('selectedUser', JSON.stringify(updatedUser));
+
+    // Store updated users in sessionStorage for persistence during session
+    sessionStorage.setItem('updatedUsers', JSON.stringify(users));
+
+    alert('Perubahan berhasil disimpan!');
+
+    // Refresh the page to show updated data
+    window.location.reload();
+  } else {
+    alert('Pengguna tidak ditemukan');
   }
 }
