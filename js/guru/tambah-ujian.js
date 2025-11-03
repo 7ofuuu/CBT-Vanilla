@@ -2,10 +2,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('.jadwal-form');
     const btnCancel = document.querySelector('.btn-cancel');
-    const editingSchedule = JSON.parse(localStorage.getItem('editingSchedule') || 'null');
+    const editingSchedule = JSON.parse(sessionStorage.getItem('editingSchedule') || 'null');
     const isEditMode = new URLSearchParams(window.location.search).get('mode') === 'edit';
     
-
     if (isEditMode && editingSchedule) {
         form.nama.value = editingSchedule.nama;
         form.tanggal.value = editingSchedule.tanggal;
@@ -56,18 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   
     function saveExamSchedule(data) {
-        const existingSchedules = JSON.parse(localStorage.getItem('examSchedules') || '[]');
         if (isEditMode) {
-            const index = existingSchedules.findIndex(schedule => schedule.id === data.id);
-            if (index !== -1) {
-                existingSchedules[index] = data;
-            }
+            examData.updateSchedule(data);
         } else {
-            existingSchedules.push(data);
+            examData.addSchedule(data);
         }
-        localStorage.setItem('examSchedules', JSON.stringify(existingSchedules));
+        
         if (isEditMode) {
-            localStorage.removeItem('editingSchedule');
+            sessionStorage.removeItem('editingSchedule');
         }
     }
 
