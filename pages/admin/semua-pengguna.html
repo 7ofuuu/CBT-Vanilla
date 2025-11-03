@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../css/global.css" />
     <link rel="stylesheet" href="../../css/admin/semua-pengguna.css" />
+    <script src="../../js/admin/ilham.js" defer></script>
     <title>Semua Pengguna</title>
   </head>
   <body>
@@ -18,8 +19,8 @@
       <div class="header-right">
         <div class="user-info">
           <div class="user-text">
-            <span class="user-name">Braum Chad</span>
-            <span class="user-role">admin</span>
+            <span id="username" class="user-name">Braum Chad</span>
+            <span id="user-role" class="user-role">admin</span>
           </div>
           <div class="user-avatar">
             <img src="../../assets/profile-admin.png" alt="User Avatar" />
@@ -108,30 +109,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><img src="../../assets/profile-admin.png" alt="User" class="user-avatar" /></td>
-              <td>Kanabawi</td>
-              <td>Ahmad Kanabawi</td>
-              <td>Siswa</td>
-            </tr>
-            <tr>
-              <td><img src="../../assets/profile-admin.png" alt="User" class="user-avatar" /></td>
-              <td>Jalil</td>
-              <td>Usman Abdul Jalil</td>
-              <td>Siswa</td>
-            </tr>
-            <tr>
-              <td><img src="../../assets/profile-admin.png" alt="User" class="user-avatar" /></td>
-              <td>Kashmiri</td>
-              <td>Khalid Kashmiri</td>
-              <td>Guru</td>
-            </tr>
-            <tr>
-              <td><img src="../../assets/profile-admin.png" alt="User" class="user-avatar" /></td>
-              <td>Sumbul</td>
-              <td>Muhammad Sumbul</td>
-              <td>Guru</td>
-            </tr>
+            <!-- Users will be populated dynamically by JavaScript -->
           </tbody>
         </table>
       </div>
