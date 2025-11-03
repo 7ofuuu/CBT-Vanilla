@@ -1,0 +1,36 @@
+.essay-container{
+  background:#fff;
+  border-radius:8px;
+  padding:22px 28px;
+  box-shadow:0 2px 4px rgba(0,0,0,0.05);
+  border-left:8px solid #2b7bd3; 
+  width:calc(100% - 40px); 
+  margin:10px 20px 30px;
+  box-sizing:border-box;
+}
+.essay-item{ margin-bottom:22px; }
+.question{ font-weight:600; color:#1b1b1b; margin-bottom:6px; }
+.question-text{ color:#333; margin-bottom:10px; }
+.answer-label{ color:#9aa0a6; margin-bottom:6px; }
+.answer-box{
+  background:#fff; border:1px solid #e3e6ea; border-radius:8px; padding:14px; color:#333; line-height:1.5;
+  box-shadow:none; min-height:60px;
+}
+.label-score{ display:block; margin-top:10px; color:#6b6f73; }
+.score-row{ display:flex; align-items:center; gap:10px; margin-top:8px; }
+.essay-score-input{ width:140px; padding:8px 10px; border:1px solid #d0d6db; border-radius:6px; }
+.save-essay-btn{ background:#2b7bd3; color:#fff; border:none; padding:8px 12px; border-radius:6px; cursor:pointer; }
+.save-essay-btn[disabled]{ opacity:0.65; cursor:default }
+.save-ok{ display:inline-block; width:26px; height:26px; border-radius:6px; border:1px solid #cdd7df; margin-left:4px; }
+.save-ok.ok{ background:#16a34a; border-color:#16a34a; position:relative; }
+.save-ok.ok::after{ content:'✓'; color:#fff; font-weight:700; position:absolute; left:6px; top:1px; }
+.submit-row{ margin-top:10px; }
+.submit-all-btn{ background:#0b3b6b; color:#fff; padding:10px 16px; border-radius:6px; border:none; cursor:pointer }
+.pagination{ display:flex; justify-content:center; gap:8px; margin-top:18px; }
+.page-btn{ width:30px; height:30px; background:transparent; border:1px solid transparent; color:#21313e; border-radius:4px; }
+.page-btn.active{ background:#0b3b6b; color:#fff; }
+
+@media (max-width:900px){
+  .essay-container{ margin:8px; padding:16px; }
+  .essay-score-input{ width:120px; }
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="../../css/guru/hasil_ujian.css" />
+  <title>Tambah Ujian</title>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <div class="logo"><img src="../../assets/logo-sekolah.png" alt="logo"/></div>
+      <h1>SMAN 1 Parigi</h1>
+    </div>
+    <div class="header-right"></div>
+  </header>
+  <main class="main-container">
+    <nav class="sidebar"> 
+      <div class="menu-title">Menu</div>
+    </nav>
+    <section class="main-content">
+      <h2 class="content-title">Tambah Ujian</h2>
+      <form id="createExamForm">
+        <div style="margin-bottom:10px;"><label>Judul Ujian</label><br/><input id="examTitle" required style="width:100%;padding:8px;border-radius:6px;border:1px solid #d0d6db"/></div>
+        <div style="margin-bottom:10px;"><label>Keterangan (contoh: XII - IPA)</label><br/><input id="examSpan" style="width:100%;padding:8px;border-radius:6px;border:1px solid #d0d6db"/></div>
+        <div style="margin-bottom:10px; display:flex; gap:16px; align-items:center;">
+          <div><label>Jumlah Kelas</label><br/><input id="examClasses" type="number" min="0" style="width:160px;padding:8px;border-radius:6px;border:1px solid #d0d6db"/></div>
+          <div><label>Total Siswa</label><br/><input id="examTotal" type="number" min="0" style="width:160px;padding:8px;border-radius:6px;border:1px solid #d0d6db"/></div>
+          <div><label>Selesai</label><br/><input id="examFinished" type="number" min="0" style="width:160px;padding:8px;border-radius:6px;border:1px solid #d0d6db"/></div>
+        </div>
+        <button type="submit" class="btn-primary">Simpan</button>
+        <a href="hasil_ujian.html" style="margin-left:12px;">Batal</a>
+      </form>
+    </section>
+  </main>
+  <script>
+    const form = document.getElementById('createExamForm');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+  const title = document.getElementById('examTitle').value.trim();
+  const span = document.getElementById('examSpan').value.trim();
+  const classes = Number(document.getElementById('examClasses').value) || 0;
+  const total = Number(document.getElementById('examTotal').value) || 0;
+  const finished = Number(document.getElementById('examFinished').value) || 0;
+  const exams = JSON.parse(localStorage.getItem('exams')||'[]');
+  const id = Date.now().toString();
+  exams.push({id, title, span, classes, total, finished});
+      localStorage.setItem('exams', JSON.stringify(exams));
+      window.location.href='hasil_ujian.html';
+    });
+  </script>
+</body>
+</html>
