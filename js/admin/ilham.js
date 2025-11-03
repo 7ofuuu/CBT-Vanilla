@@ -21,6 +21,9 @@ const users = [
     role: 'siswa',
     nama: 'Ahmad Kanabawi',
     foto: '../../assets/profile-admin.png',
+    jurusan: 'IPA',
+    tingkat: 'XII',
+    kelas: 'IPA 01',
   },
   {
     username: 'jalil',
@@ -28,6 +31,9 @@ const users = [
     role: 'siswa',
     nama: 'Usman Abdul Jalil',
     foto: '../../assets/profile-admin.png',
+    jurusan: 'IPS',
+    tingkat: 'XI',
+    kelas: 'IPS 02',
   },
   {
     username: 'kashmiri',
@@ -175,7 +181,6 @@ function displayUsers() {
       <td>${user.role.charAt(0).toUpperCase() + user.role.slice(1)}</td>
     `;
 
-    // Add click event to navigate to detail page
     row.style.cursor = 'pointer';
     row.addEventListener('click', () => {
       // Store selected user in localStorage
@@ -259,6 +264,22 @@ function displayUserDetail() {
   if (roleSelect) {
     roleSelect.value = selectedUser.role;
   }
+
+  // Update siswa-specific fields if they exist
+  const jurusanInput = document.getElementById('jurusan');
+  if (jurusanInput && selectedUser.jurusan) {
+    jurusanInput.value = selectedUser.jurusan;
+  }
+
+  const tingkatInput = document.getElementById('tingkat');
+  if (tingkatInput && selectedUser.tingkat) {
+    tingkatInput.value = selectedUser.tingkat;
+  }
+
+  const kelasInput = document.getElementById('kelas');
+  if (kelasInput && selectedUser.kelas) {
+    kelasInput.value = selectedUser.kelas;
+  }
 }
 
 // Call displayUserDetail when on detail page
@@ -298,14 +319,13 @@ function hapusPengguna() {
     localStorage.setItem('deletedUsers', JSON.stringify(deletedUsers));
   }
 
-  // Clear selected user from localStorage
   localStorage.removeItem('selectedUser');
 
   alert('Pengguna berhasil dihapus!');
 
-  // Redirect back to user list
   window.location.href = 'semua-pengguna.html';
-} // Attach delete function to button
+}
+
 if (window.location.pathname.includes('detail-pengguna')) {
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
