@@ -323,7 +323,6 @@ function applyPesertaFilters(searchInput, tingkatSelect, kelasSelect, statusSele
     renderPesertaTableFiltered(filtered);
 }
 
-
 function renderPesertaTableFiltered(filteredData) {
     const tbody = document.querySelector(".activity-detail-table tbody");
     if (!tbody) return;
