@@ -1,29 +1,13 @@
-// ===================== SIDEBAR NAVIGATION =====================
-function initSidebarNavigation() {
-  document.querySelectorAll(".menu-item").forEach((item) => {
-    const text = item.textContent.trim();
+/* ==========================================================
+   TAMBAH-PENGGUNA.JS — Switch Form by Role + UX helpers
+   Berlaku untuk:
+   - tambah-pengguna.html (default)
+   - tambah-pengguna-admin.html
+   - tambah-pengguna-guru.html
+   - tambah-pengguna-siswa.html
+   ========================================================== */
 
-    item.addEventListener("click", () => {
-      if (text === "Beranda") {
-        window.location.href = "./home-admin.html";
-      } else if (text === "Pengguna") {
-        window.location.href = "./semua-pengguna.html";
-      } else if (text === "Aktivitas") {
-        window.location.href = "./aktivitas.html";
-      }
-    });
-  });
-
-  const logoutBtn = document.querySelector(".logout-btn");
-  if (logoutBtn) {
-    logoutBtn.addEventListener("click", () => {
-      alert("Anda telah keluar dari akun ini.");
-      window.location.href = "../login.html";
-    });
-  }
-}
-
-// ===================== BREADCRUMB NAVIGATION =====================
+/* ---------- Breadcrumb: kembali ke daftar pengguna ---------- */
 function initBreadcrumb() {
   const breadcrumb = document.querySelector(".breadcrumb-back");
   if (!breadcrumb) return;
@@ -33,82 +17,70 @@ function initBreadcrumb() {
   });
 }
 
-// ===================== FORM VALIDATION =====================
-function initFormValidation() {
+/* ---------- Role Switch: pindah ke halaman form yang sesuai ---------- */
+function handleRoleChange(e) {
+  const value = (e?.target?.value || "").toLowerCase();
+
+  // Peta role → file HTML (semua di folder yang sama)
+  const route = {
+    "": "./tambah-pengguna.html",          // fallback / "Pilih Role *"
+    admin: "./tambah-pengguna-admin.html",
+    guru: "./tambah-pengguna-guru.html",
+    siswa: "./tambah-pengguna-siswa.html",
+  };
+
+  const target = route[value] || route[""];
+
+  // Hindari reload ke halaman yang sama
+  const current = window.location.pathname.split("/").pop();
+  const targetFile = target.replace("./", "");
+  if (current !== targetFile) window.location.href = target;
+}
+
+/* ---------- Cancel → back ---------- */
+function initCancel() {
+  const btnCancel = document.querySelector(".btn-cancel");
+  if (btnCancel) btnCancel.addEventListener("click", () => window.history.back());
+}
+
+/* ---------- Sinkronkan value select role dengan halaman aktif ---------- */
+function syncRoleSelectToPage() {
+  const roleSelect = document.getElementById("role");
+  if (!roleSelect) return;
+
+  const file = window.location.pathname.split("/").pop().toLowerCase();
+
+  if (file.includes("admin")) roleSelect.value = "admin";
+  else if (file.includes("guru")) roleSelect.value = "guru";
+  else if (file.includes("siswa")) roleSelect.value = "siswa";
+  else roleSelect.value = ""; // halaman default "tambah-pengguna.html"
+}
+
+/* ---------- (Opsional) Submit handler: cegah reload & validasi ringan ---------- */
+function initSubmitGuard() {
   const form = document.querySelector(".form-tambah-pengguna");
   if (!form) return;
 
-  const inputs = form.querySelectorAll("input[required], select[required]");
-
-  // Buat elemen error text di bawah setiap field
-  inputs.forEach((input) => {
-    const errorText = document.createElement("p");
-    errorText.className = "error-text";
-    errorText.style.color = "#dc2626";
-    errorText.style.fontSize = "0.8rem";
-    errorText.style.marginTop = "4px";
-    errorText.style.display = "none";
-    errorText.textContent = "Field ini wajib diisi";
-    input.insertAdjacentElement("afterend", errorText);
-
-    // Hilangkan error saat user mengetik/memilih
-    input.addEventListener("input", () => clearError(input));
-    input.addEventListener("change", () => clearError(input));
-  });
-
   form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    let valid = true;
+    // contoh validasi singkat; silakan sambung ke logika simpan sebenarnya
+    const required = form.querySelectorAll("[required]");
+    const invalid = Array.from(required).find((el) => !el.value.trim());
 
-    inputs.forEach((input) => {
-      if (input.value.trim() === "") {
-        showError(input);
-        valid = false;
-      } else {
-        clearError(input);
-      }
-    });
-
-    if (!valid) return;
-
-    // Jika semua field terisi
-    alert("Pengguna berhasil ditambahkan!");
-    form.reset();
-
-    // Hapus semua error & styling merah
-    inputs.forEach(clearError);
+    if (invalid) {
+      e.preventDefault();
+      invalid.focus();
+      alert("Lengkapi semua field bertanda * sebelum konfirmasi.");
+    }
   });
 }
 
-// ===================== ERROR HANDLING =====================
-function showError(input) {
-  input.style.borderColor = "#dc2626";
-  const error = input.nextElementSibling;
-  if (error && error.classList.contains("error-text")) {
-    error.style.display = "block";
-  }
-}
+/* ---------- Inisialisasi ---------- */
+document.addEventListener("DOMContentLoaded", function () {
+  const roleSelect = document.getElementById("role");
+  if (roleSelect) roleSelect.addEventListener("change", handleRoleChange);
 
-function clearError(input) {
-  input.style.borderColor = "";
-  const error = input.nextElementSibling;
-  if (error && error.classList.contains("error-text")) {
-    error.style.display = "none";
-  }
-}
-
-// ===================== CANCEL BUTTON =====================
-function initCancelButton() {
-  const btnCancel = document.querySelector(".btn-cancel");
-  if (btnCancel) {
-    btnCancel.addEventListener("click", () => window.history.back());
-  }
-}
-
-// ===================== INITIALIZATION =====================
-document.addEventListener("DOMContentLoaded", () => {
-  initSidebarNavigation();
+  syncRoleSelectToPage();
+  initCancel();
+  initSubmitGuard();
   initBreadcrumb();
-  initFormValidation();
-  initCancelButton();
 });
